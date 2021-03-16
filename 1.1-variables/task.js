@@ -19,15 +19,20 @@ function averageMark(a, g, p) {
 }
 
 function sayHello(userName) {
-	
+	let myName = Мария;
+	let message;
+	message = (`Привет, мир! меня зовут ${myName}`);
     // реализуйте здесь задание №2
     
-	return // ваш ответ;
+	return message // ваш ответ;
 }
 
 function calculateFormula() {
-    
+    let x = 2;
+    let y = 22;
+    let z = 0;
+    let result = ('x "*" y "+" 5 "*" z "+" x "-" 1');
 	// реализуйте здесь задание №3
     
-    return // ваш ответ;
+    return result// ваш ответ;
 }
