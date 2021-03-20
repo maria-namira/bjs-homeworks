@@ -5,31 +5,53 @@
 	3) console.log() прописывать не обязательно, т.к. команда return уже означает вывод результата работы функции.
  */
 
-function averageMark(a, g, p) {
-	let algebra = a;
-	let geography = g;
-	let phisics = p;
-	let result = (algebra + geography + phisics) / 3;
+function getResult(a,b,c){
+	let discr = (a, b , c) =>
+		b * b - 4 * a * c;
+		arr = getResult(a, b, c),
+		d = arr[0];
+		console.log("Дискриминант:" + d);
+		console.log(d < 0 ? "Корней нет" : d ===0 ? "Один корень:" + arr[1] : `Два корня: ${arr[1]} и ${arr[2]}`);
+		// если значение дискриминанта квадрат уравнения < 0, то корней на множество действ. чисел
+    let d = discr(a, b, c);
+    if(d < 0) return [d];
+    let x1 =(-b + Math.sqrt(d))/(2*a),
+        x2 =(-b - Math.sqrt(d))/(2*a);
+        return [d, x1, x2];
+	}
+    // код для задачи №1 писать здесь
+    // return x;
+
+
+function getAverageMark(marks){
+	let marks = [2, 3, 4, 5];
+	marks.slice(5, from);
+	let marksRes = [];
+	if (marks.length == 0){
+		console.log('массив marks пустой');
+	}
+
+	count2 = 0, count3= 0,
+	count4= 0, count5 = 0,
+	result = marks.Math(d/g);
+	for(let i =0; i<result.length; i++)
+		switch(result[i]){
+			case'2': count2++; break;
+			case'3': count3++; break;
+			case'4': count4++; break;
+			case'5': count5++; break;
+};
+
+console.log('2: '+count2', 3: '+count3+', '+count4+', 5: 'count5'');
+console.log("троек" + "5,5,2,3,3,3". replace(/[^3]/g, "").length);
 	
-
-
-    // реализуйте здесь задание №1
-    
-	return result // ваш ответ;
+	
+    // код для задачи №2 писать здесь
+    // return averageMark;
 }
 
-function sayHello(userName) {
-	let myName = имя;
-	let message;
-	message = (`Привет, мир! меня зовут ${myName}`);
-    // реализуйте здесь задание №2
-    
-	return message // ваш ответ;
-}
-
-function calculateFormula() {
-    
-	// реализуйте здесь задание №3
-    
-    return // ваш ответ;
+function askDrink(name,dateOfBirthday){
+	
+    // код для задачи №3 писать здесь
+    // return result;
 }
