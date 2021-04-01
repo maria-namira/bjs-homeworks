@@ -4,9 +4,9 @@
 	2) После ключевого слова return вместо комментария необходимо написать переменную либо выражение с ответом.
 	3) console.log() прописывать не обязательно, т.к. команда return уже означает вывод результата работы функции.
  */
-
-function getResult(a, b, c) {
     "use strict"
+function getResult(a, b, c) {
+ 
     let D = Math.pow(b, 2) - 4 * a * c;
     let x1;
     let x2;
@@ -14,25 +14,25 @@ function getResult(a, b, c) {
 
         x1 = (-b + Math.sqrt(D)) / (2 * a);
         x2 = (-b - Math.sqrt(D)) / (2 * a);
-        let result = [x1, x2];
+        
         console.log(`Существует 2 корня`);
-        return result;
+        return [x1, x2];
 
     }
     if (D == 0) {
         x1 = (-b + Math.sqrt(D)) / (2 * a);
         console.log(`Cуществует 1 корень`);
-        let result = [x1];
-        return result;
+        
+        return [x1];
     }
     if (D < 0) {
         console.log(`Значения не существует`)
-        let x = [];
-        return x;
+        
+        return [x];
     }
     // код для задачи№ 1 писать здесь
     console.log(x);
-    console.log(result);
+    console.log(return);
     // return x;
 }
     // код для задачи №1 писать здесь
@@ -46,55 +46,32 @@ function getAverageMark(marks) {
         console.log("Оценок нет");
         return average;
     }
-    if (marks.length > 5) {
-        marks.splice(5, 10)
+    else if (marks.length > 5) {
+        marks.splice(0, 5);
         console.log("Ой, похоже вы ввели лишнии оценки, но не волнуйтесь мы их уже убрали!")
     }
-    if (marks.length == 1) {
-        average = marks[0];
-        return average;
+    
+    let averageMark = 0;
+    for (let i = 0; i < marks.length; i++){
+    	averageMark = averageMark + marks[i];
     }
-    if (marks.length == 2) {
-        average = (marks[0] + marks[1]) / marks.length;
-        return average;
-    }
-    if (marks.length == 3) {
-        average = (marks[0] + marks[1] + marks[2]) / marks.length;
-        return average;
-    }
-    if (marks.length == 4) {
-        average = (marks[0] + marks[1] + marks[2] + marks[3]) / marks.length;
-        return average;
-    }
-    if (marks.length == 5) {
-        average = (marks[0] + marks[1] + marks[2] + marks[3] + marks[4]) / marks.length;
-        return average;
-    }
-
+    
+  averageMark = averageMark/marks.length;
+  return averageMark;
+}
 
 
     // код для задачи №2 писать здесь
     // return averageMark;
-}
+
 
 function askDrink(name, dateOfBirthday) {
-    name = 'Иван';
-    let now = new Date(); //Текущя дата
-    dateOfBirthday = new Date(2000, 6, 24); //Дата рождения
-    let age; //Возраст
-    let ageActive = 21;
-    // код для задачи №3 писать здесь
-    age = now.getFullYear() - dateOfBirthday.getFullYear();
-    let result;
-    //Если ДР в этом году ещё предстоит, то вычитаем из age один год
-    if (age >= ageActive) {
-        result = (`Не желаете ли олд-фэшн, ${ name }?`);
-        return result;
+    
+    let date = new Date; //Текущя дата
+    if (date.getFullYear() - dateOfBirthday.getFullYear() > 18) {
+    	return `Не желаете ли олд-фэшн, ${name}?`;
+    } else{
+    	return `Сожалею, ${name}, ноя могу вам продать алкоголь. Могу предложить вам замечательный клюквенный компот!`;
     }
-    if (age < ageActive) {
-        result = (`Сожалею, ${ name }, но я не могу вам продать алкоголь. Могу предложить вам замечательный клюквенный компот!`);
-        return result;
-    }
-    // return result; 
 
 }
